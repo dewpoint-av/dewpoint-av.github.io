@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dewpointav/static/css/main.d2aaaf82.css",
+    "main.js": "/dewpointav/static/js/main.203bb90a.js",
+    "index.html": "/dewpointav/index.html",
+    "main.d2aaaf82.css.map": "/dewpointav/static/css/main.d2aaaf82.css.map",
+    "main.203bb90a.js.map": "/dewpointav/static/js/main.203bb90a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2aaaf82.css",
+    "static/js/main.203bb90a.js"
+  ]
+}
