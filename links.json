@@ -1,10 +1,11 @@
 [
-  { "label": "Redtree Jamboree Tickets", "href": "https://theticketing.co/e/redtreejamboree", "external": true },
-  { "label": "Bookings & Inquiries", "href": "mailto:anthony@dewpoint.live", "external": true },
   { "label": "Blossom Echoes LP", "href": "https://www.submithub.com/link/blossom-echoes", "external": true, "image": "Blossom Echoes LP.jpg" },
-  { "label": "Electric Hawk on 'Through My Eyes' EP", "href": "https://theelectrichawk.com/dewpoint-through-my-eyes-ep/", "external": true },
-  { "label": "Lesson Availability", "href": "https://calendly.com/dewpointsounds", "external": true },
+  { "label": "Electric Hawk Feature", "href": "https://theelectrichawk.com/dewpoint-through-my-eyes-ep/", "external": true },
+  { "label": "Redtree Jamboree Tickets", "href": "https://theticketing.co/e/redtreejamboree", "external": true },
   { "label": "Technical Resume", "href": "#/resume" },
-  { "label": "Audiovisual EPK", "href": "#/epk", "image": "DewPoint-BlackBox-4.11.25-10.jpg" }
+  { "label": "Audiovisual EPK", "href": "#/epk", "image": "DewPoint-BlackBox-4.11.25-10.jpg" },
+  { "label": "Bookings & Inquiries", "href": "mailto:anthony@dewpoint.live", "external": true },
+  { "label": "Lesson Availability", "href": "https://calendly.com/dewpointsounds", "external": true },
+  { "label": "Project Files & More", "href": "https://patreon.com/dewpointsounds", "external": true }
 ]
 
