@@ -204,6 +204,25 @@
         padding-top: 1rem;
     }
 }
+
+/* Hide any "Dewpoint AV" text that appears below the profile picture */
+#root h1:contains("Dewpoint AV"),
+#root h2:contains("Dewpoint AV"),
+#root h3:contains("Dewpoint AV"),
+#root p:contains("Dewpoint AV"),
+#root div:contains("Dewpoint AV") {
+    display: none !important;
+}
+
+/* Alternative approach: Hide specific text content */
+#root * {
+    font-size: 0 !important;
+}
+
+#root *::before,
+#root *::after {
+    content: none !important;
+}
 </style><title>Dewpoint AV</title><script defer="defer" src="/static/js/main.a30beeea.js"></script><link href="/static/css/main.1b0386a9.css" rel="stylesheet"/></head><body><canvas id="particle-canvas"></canvas>
 
 <!-- Enhanced Header -->
@@ -526,4 +545,44 @@ setTimeout(() => {
         window.particleSystem = new ParticleSystem();
     }
 }, 2000);
+
+// Function to hide "Dewpoint AV" text that appears below the profile picture
+function hideDewpointAVText() {
+    const root = document.getElementById('root');
+    if (!root) return;
+    
+    // Function to recursively search and hide elements with "Dewpoint AV" text
+    function hideTextRecursively(element) {
+        if (element.nodeType === Node.TEXT_NODE) {
+            if (element.textContent.includes('Dewpoint AV')) {
+                element.parentElement.style.display = 'none';
+                return true;
+            }
+        } else if (element.nodeType === Node.ELEMENT_NODE) {
+            // Check if this element contains the text
+            if (element.textContent.includes('Dewpoint AV')) {
+                // Check if it's not our custom header
+                if (!element.closest('.dewpoint-header')) {
+                    element.style.display = 'none';
+                    return true;
+                }
+            }
+            
+            // Recursively check children
+            for (let child of element.children) {
+                if (hideTextRecursively(child)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    hideTextRecursively(root);
+}
+
+// Run the hide function after a delay to ensure React has rendered
+setTimeout(hideDewpointAVText, 1000);
+setTimeout(hideDewpointAVText, 3000);
+setTimeout(hideDewpointAVText, 5000);
 </script></body></html>
