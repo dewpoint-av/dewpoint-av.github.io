@@ -1,1 +1,191 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico?v=2"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#000000"/><meta name="color-scheme" content="dark light"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="mobile-web-app-capable" content="yes"/><meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https: blob:; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"/><meta name="description" content="Audiovisual Artist, Musician, Projectionist, Technician"/><link rel="apple-touch-icon" sizes="180x180" href="/profile-image.jpg"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#000000"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"><style>body,html{height:100%}body{background:linear-gradient(135deg,#000 0,#1a1a1a 100%)}</style><title>Dewpoint AV</title><script defer="defer" src="/static/js/main.a30beeea.js"></script><link href="/static/css/main.1b0386a9.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico?v=2"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#000000"/><meta name="color-scheme" content="dark light"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="mobile-web-app-capable" content="yes"/><meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https: blob:; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"/><meta name="description" content="Audiovisual Artist, Musician, Projectionist, Technician"/><link rel="apple-touch-icon" sizes="180x180" href="/profile-image.jpg"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#000000"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"><style>body,html{height:100%;margin:0;padding:0}body{background:linear-gradient(135deg,#000 0,#1a1a1a 100%);overflow-x:hidden}#particle-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.6}#root{position:relative;z-index:1}</style><title>Dewpoint AV</title><script defer="defer" src="/static/js/main.a30beeea.js"></script><link href="/static/css/main.1b0386a9.css" rel="stylesheet"></head><body><canvas id="particle-canvas"></canvas><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>
+// Cross-platform Audio-Reactive Particle System
+class ParticleSystem {
+    constructor() {
+        this.canvas = document.getElementById('particle-canvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.audioData = null;
+        this.isAudioAvailable = false;
+        this.mouseX = 0;
+        this.mouseY = 0;
+        this.touchActive = false;
+        this.devicePixelRatio = window.devicePixelRatio || 1;
+        
+        this.init();
+    }
+
+    init() {
+        this.resizeCanvas();
+        this.createParticles();
+        this.setupEventListeners();
+        this.animate();
+        
+        // Try to initialize audio context
+        this.initAudio();
+    }
+
+    resizeCanvas() {
+        this.canvas.width = window.innerWidth * this.devicePixelRatio;
+        this.canvas.height = window.innerHeight * this.devicePixelRatio;
+        this.canvas.style.width = window.innerWidth + 'px';
+        this.canvas.style.height = window.innerHeight + 'px';
+        this.ctx.scale(this.devicePixelRatio, this.devicePixelRatio);
+    }
+
+    createParticles() {
+        const particleCount = Math.min(100, Math.floor((window.innerWidth * window.innerHeight) / 10000));
+        
+        for (let i = 0; i < particleCount; i++) {
+            this.particles.push({
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 3 + 1,
+                opacity: Math.random() * 0.5 + 0.2,
+                hue: Math.random() * 60 + 200, // Blue to purple range
+                audioReactivity: Math.random() * 0.5 + 0.5
+            });
+        }
+    }
+
+    setupEventListeners() {
+        // Cross-platform resize handling
+        window.addEventListener('resize', () => this.resizeCanvas());
+        
+        // Mouse events
+        document.addEventListener('mousemove', (e) => {
+            this.mouseX = e.clientX;
+            this.mouseY = e.clientY;
+        });
+
+        // Touch events for mobile
+        document.addEventListener('touchstart', (e) => {
+            this.touchActive = true;
+            this.mouseX = e.touches[0].clientX;
+            this.mouseY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            this.mouseX = e.touches[0].clientX;
+            this.mouseY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', () => {
+            this.touchActive = false;
+        });
+
+        // Audio context activation
+        document.addEventListener('click', () => this.initAudio());
+        document.addEventListener('touchstart', () => this.initAudio());
+    }
+
+    async initAudio() {
+        if (this.isAudioAvailable || !window.AudioContext) return;
+        
+        try {
+            // Try to create audio context
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            this.audioContext = new AudioContext();
+            
+            // Resume context if suspended
+            if (this.audioContext.state === 'suspended') {
+                await this.audioContext.resume();
+            }
+            
+            this.isAudioAvailable = true;
+            this.setupAudioAnalysis();
+        } catch (error) {
+            console.log('Audio context not available:', error);
+        }
+    }
+
+    setupAudioAnalysis() {
+        // This would connect to YouTube audio when available
+        // For now, we'll create a simulated audio response
+        this.audioData = {
+            bass: 0,
+            treble: 0,
+            volume: 0
+        };
+    }
+
+    animate() {
+        this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        
+        // Update and draw particles
+        this.particles.forEach(particle => {
+            this.updateParticle(particle);
+            this.drawParticle(particle);
+        });
+        
+        requestAnimationFrame(() => this.animate());
+    }
+
+    updateParticle(particle) {
+        // Audio reactivity
+        if (this.audioData && this.isAudioAvailable) {
+            const audioInfluence = particle.audioReactivity * 0.1;
+            particle.size += (this.audioData.bass * audioInfluence - particle.size) * 0.1;
+            particle.opacity += (this.audioData.volume * audioInfluence - particle.opacity) * 0.1;
+        }
+
+        // Mouse/touch interaction
+        const dx = this.mouseX - particle.x;
+        const dy = this.mouseY - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 100) {
+            const force = (100 - distance) / 100;
+            particle.vx += dx * force * 0.001;
+            particle.vy += dy * force * 0.001;
+        }
+
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > window.innerWidth) particle.vx *= -0.8;
+        if (particle.y < 0 || particle.y > window.innerHeight) particle.vy *= -0.8;
+
+        // Keep particles on screen
+        particle.x = Math.max(0, Math.min(window.innerWidth, particle.x));
+        particle.y = Math.max(0, Math.min(window.innerHeight, particle.y));
+
+        // Friction
+        particle.vx *= 0.99;
+        particle.vy *= 0.99;
+    }
+
+    drawParticle(particle) {
+        this.ctx.save();
+        this.ctx.globalAlpha = particle.opacity;
+        this.ctx.fillStyle = `hsl(${particle.hue}, 70%, 60%)`;
+        
+        // Create glow effect
+        this.ctx.shadowColor = `hsl(${particle.hue}, 70%, 60%)`;
+        this.ctx.shadowBlur = particle.size * 2;
+        
+        this.ctx.beginPath();
+        this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        this.ctx.fill();
+        this.ctx.restore();
+    }
+
+    // Method to update audio data from external sources
+    updateAudioData(bass, treble, volume) {
+        if (this.audioData) {
+            this.audioData.bass = bass;
+            this.audioData.treble = treble;
+            this.audioData.volume = volume;
+        }
+    }
+}
+
+// Initialize particle system when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new ParticleSystem();
+});
+</script></body></html>
