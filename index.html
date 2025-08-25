@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <meta name="mobile-web-app-capable" content="yes"/>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https: blob:; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https: blob:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"/>
     <meta name="description" content="Audiovisual Artist, Musician, Projectionist, Technician"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/profile-image.jpg"/>
     <link rel="manifest" href="/manifest.json"/>
@@ -39,11 +39,20 @@
         pointer-events: none;
       }
       
+      /* Ensure React app content is visible */
+      #root > * {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      
       #root {
         position: relative;
         z-index: 1;
         margin-top: 70px;
         padding-top: 1rem;
+        min-height: 100vh;
+        display: block;
       }
       
       .dewpoint-header {
@@ -666,6 +675,17 @@
           window.particleSystem = new ParticleSystem();
         }
       }, 2000);
+      
+      // Debug React app loading
+      console.log('Checking React app...');
+      setTimeout(() => {
+        const root = document.getElementById('root');
+        console.log('Root element:', root);
+        console.log('Root children:', root ? root.children.length : 'No root');
+        if (root && root.children.length === 0) {
+          console.log('React app not loaded, checking for errors...');
+        }
+      }, 3000);
     </script>
   </body>
 </html>
