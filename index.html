@@ -1,7 +1,8 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico?v=2"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#000000"/><meta name="color-scheme" content="dark light"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="mobile-web-app-capable" content="yes"/><meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https: blob:; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"/><meta name="description" content="Audiovisual Artist, Musician, Projectionist, Technician"/><link rel="apple-touch-icon" sizes="180x180" href="/profile-image.jpg"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#000000"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"><style>body,html{height:100%;margin:0;padding:0}body{background:linear-gradient(135deg,#000 0,#1a1a1a 100%);overflow-x:hidden}#particle-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.6}#root{position:relative;z-index:1}</style><title>Dewpoint AV</title><script defer="defer" src="/static/js/main.a30beeea.js"></script><link href="/static/css/main.1b0386a9.css" rel="stylesheet"></head><body><canvas id="particle-canvas"></canvas><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico?v=2"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#000000"/><meta name="color-scheme" content="dark light"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="mobile-web-app-capable" content="yes"/><meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https: blob:; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"/><meta name="description" content="Audiovisual Artist, Musician, Projectionist, Technician"/><link rel="apple-touch-icon" sizes="180x180" href="/profile-image.jpg"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#000000"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/><style>body,html{height:100%;margin:0;padding:0}body{background:linear-gradient(135deg,#000 0,#1a1a1a 100%);overflow-x:hidden}#particle-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;opacity:1;pointer-events:none}#root{position:relative;z-index:1}</style><title>Dewpoint AV</title><script defer="defer" src="/static/js/main.a30beeea.js"></script><link href="/static/css/main.1b0386a9.css" rel="stylesheet"/></head><body><canvas id="particle-canvas"></canvas><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>
 // Cross-platform Audio-Reactive Particle System
 class ParticleSystem {
     constructor() {
+        console.log('ParticleSystem: Initializing...');
         this.canvas = document.getElementById('particle-canvas');
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
@@ -12,29 +13,47 @@ class ParticleSystem {
         this.touchActive = false;
         this.devicePixelRatio = window.devicePixelRatio || 1;
         
+        console.log('ParticleSystem: Canvas element:', this.canvas);
+        console.log('ParticleSystem: Canvas context:', this.ctx);
+        
+        if (!this.canvas || !this.ctx) {
+            console.error('ParticleSystem: Failed to get canvas or context!');
+            return;
+        }
+        
         this.init();
     }
 
     init() {
+        console.log('ParticleSystem: Starting initialization...');
         this.resizeCanvas();
         this.createParticles();
         this.setupEventListeners();
         this.animate();
+        
+        console.log('ParticleSystem: Created', this.particles.length, 'particles');
         
         // Try to initialize audio context
         this.initAudio();
     }
 
     resizeCanvas() {
+        console.log('ParticleSystem: Resizing canvas to', window.innerWidth, 'x', window.innerHeight);
         this.canvas.width = window.innerWidth * this.devicePixelRatio;
         this.canvas.height = window.innerHeight * this.devicePixelRatio;
         this.canvas.style.width = window.innerWidth + 'px';
         this.canvas.style.height = window.innerHeight + 'px';
         this.ctx.scale(this.devicePixelRatio, this.devicePixelRatio);
+        
+        // Test draw to make sure canvas is working
+        this.ctx.fillStyle = 'red';
+        this.ctx.fillRect(0, 0, 10, 10);
+        console.log('ParticleSystem: Test draw completed');
     }
 
     createParticles() {
         const particleCount = Math.min(100, Math.floor((window.innerWidth * window.innerHeight) / 10000));
+        console.log('ParticleSystem: Creating', particleCount, 'particles');
         
         for (let i = 0; i < particleCount; i++) {
             this.particles.push({
@@ -112,6 +131,7 @@ class ParticleSystem {
     }
 
     animate() {
+        // Clear the entire canvas
         this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
         
         // Update and draw particles
@@ -186,6 +206,23 @@ class ParticleSystem {
 
 // Initialize particle system when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, creating ParticleSystem...');
     new ParticleSystem();
 });
+
+// Also try to initialize if DOM is already loaded
+if (document.readyState === 'loading') {
+    console.log('DOM still loading...');
+} else {
+    console.log('DOM already loaded, creating ParticleSystem immediately...');
+    new ParticleSystem();
+}
+
+// Fallback initialization after a delay
+setTimeout(() => {
+    console.log('Fallback initialization after timeout...');
+    if (!window.particleSystem) {
+        window.particleSystem = new ParticleSystem();
+    }
+}, 2000);
 </script></body></html>
