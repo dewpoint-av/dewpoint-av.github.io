@@ -4,7 +4,7 @@
   { "label": "Blossom Echoes LP", "href": "https://www.submithub.com/link/blossom-echoes", "external": true, "image": "Blossom Echoes LP.jpg" },
   { "label": "Vinyl & Merch", "href": "https://dewpointav.myshopify.com/", "external": true, "image": "vinyl and merch.png" },
   { "label": "Electric Hawk on 'Through My Eyes' EP", "href": "https://theelectrichawk.com/dewpoint-through-my-eyes-ep/", "external": true },
-  { "label": "'Blossom' Curated Playlists", "href": "https://www.submithub.com/link/blossom-playlists", "external": true },
+  //{ "label": "'Blossom' Curated Playlists", "href": "https://www.submithub.com/link/blossom-playlists", "external": true },
   { "label": "Lesson Availability", "href": "https://calendly.com/dewpointsounds", "external": true },
   { "label": "Project Files & More", "href": "https://patreon.com/dewpointsounds", "external": true },
   { "label": "Technical Resume", "href": "#/resume" },
