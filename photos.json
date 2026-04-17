@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "src": "Tour%20Photos/DewPoint-BlackBox-4.11.25-10.jpg",
+    "alt": "Dewpoint live at The Black Box, Denver",
+    "caption": "The Black Box · Denver, CO · April 2025",
+    "category": "live"
+  },
+  {
+    "id": 2,
+    "src": "Tour%20Photos/DewPoint-BlackBox-4.11.25-2.jpg",
+    "alt": "Dewpoint performing at The Black Box",
+    "caption": "The Black Box · Denver, CO · April 2025",
+    "category": "live"
+  },
+  {
+    "id": 3,
+    "src": "Tour%20Photos/DewPoint-BlackBox-4.11.25-9.jpg",
+    "alt": "Dewpoint at The Black Box stage",
+    "caption": "The Black Box · Denver, CO · April 2025",
+    "category": "live"
+  },
+  {
+    "id": 4,
+    "src": "Tour%20Photos/DEWPOINT-06%20(1).jpg",
+    "alt": "Dewpoint press photo",
+    "caption": "",
+    "category": "press"
+  },
+  {
+    "id": 5,
+    "src": "Tour%20Photos/DEWPOINT-08.jpg",
+    "alt": "Dewpoint press photo",
+    "caption": "",
+    "category": "press"
+  },
+  {
+    "id": 6,
+    "src": "Tour%20Photos/IMG_4177.jpg",
+    "alt": "Dewpoint live",
+    "caption": "",
+    "category": "live"
+  },
+  {
+    "id": 7,
+    "src": "Tour%20Photos/IMG_4227.jpg",
+    "alt": "Dewpoint live",
+    "caption": "",
+    "category": "live"
+  },
+  {
+    "id": 8,
+    "src": "Tour%20Photos/Photo%20Dec%2003%202024%2C%2010%2029%2024%20PM.jpg",
+    "alt": "Dewpoint December 2024",
+    "caption": "December 2024",
+    "category": "live"
+  },
+  {
+    "id": 9,
+    "src": "Tour%20Photos/Photo%20Dec%2007%202024%2C%2012%2026%2032%20PM.jpg",
+    "alt": "Dewpoint December 2024",
+    "caption": "December 2024",
+    "category": "live"
+  },
+  {
+    "id": 10,
+    "src": "Tour%20Photos/Photo%20Dec%2020%202024%2C%203%2012%2012%20AM%20(4).jpg",
+    "alt": "Dewpoint December 2024",
+    "caption": "December 2024",
+    "category": "live"
+  },
+  {
+    "id": 11,
+    "src": "Tour%20Photos/Photo%20Mar%2001%202024%2C%2011%2046%2029%20PM.jpg",
+    "alt": "Dewpoint March 2024",
+    "caption": "March 2024",
+    "category": "live"
+  },
+  {
+    "id": 12,
+    "src": "Tour%20Photos/Polish_20251013_123526914.jpg",
+    "alt": "Dewpoint October 2025",
+    "caption": "October 2025",
+    "category": "live"
+  },
+  {
+    "id": 13,
+    "src": "Tour%20Photos/Polish_20251013_123535067.jpg",
+    "alt": "Dewpoint October 2025",
+    "caption": "October 2025",
+    "category": "live"
+  },
+  {
+    "id": 14,
+    "src": "Tour%20Photos/Polish_20251013_123546561.jpg",
+    "alt": "Dewpoint October 2025",
+    "caption": "October 2025",
+    "category": "live"
+  },
+  {
+    "id": 15,
+    "src": "vinyl%20and%20merch.png",
+    "alt": "Dewpoint vinyl and merch",
+    "caption": "",
+    "category": "press"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Flux State",
+    "year": 2026,
+    "type": "EP",
+    "coverArt": "covers/flux-state.jpg",
+    "links": {
+      "submithub": "https://www.submithub.com/link/flux-state"
+    },
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Recent Releases",
+    "year": 2026,
+    "type": "Playlist",
+    "coverArt": "covers/recent-releases.jpg",
+    "links": {
+      "soundcloud": "https://soundcloud.com/dewpointlive/sets/recent-releases"
+    },
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "Pressure Front",
+    "year": 2026,
+    "type": "Mixtape",
+    "coverArt": "covers/pressure-front.jpg",
+    "links": {
+      "soundcloud": "https://soundcloud.com/dewpointlive/pressure-front"
+    },
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Live AV Set — NYE Weekend Chicago 2026",
+    "year": 2026,
+    "type": "Live Set",
+    "coverArt": "covers/nye-set.jpg",
+    "links": {
+      "submithub": "https://www.submithub.com/links/2026-audiovisual-set"
+    },
+    "featured": false
+  }
+]

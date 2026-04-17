@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "date": "2026-05-08",
+    "venue": "Galaxie Louisville",
+    "city": "Louisville",
+    "state": "KY",
+    "ticketUrl": "https://theticketing.co/e/subdoctaglxlou",
+    "thumbnail": "shows/subdocta-galaxie.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": 2,
+    "date": "2026-09-05",
+    "venue": "The Cardinal Center",
+    "city": "Secret Dreams Music Festival",
+    "state": "",
+    "ticketUrl": "https://secretdreamsfest.ticketspice.com/secret-dreams-festival-2026",
+    "thumbnail": "shows/secret-dreams.png",
+    "status": "upcoming"
+  },
+  {
+    "id": 3,
+    "date": "2025-04-11",
+    "venue": "The Black Box",
+    "city": "Denver",
+    "state": "CO",
+    "ticketUrl": "",
+    "thumbnail": "",
+    "status": "past"
+  },
+  {
+    "id": 4,
+    "date": "2024-12-07",
+    "venue": "TBA",
+    "city": "Denver",
+    "state": "CO",
+    "ticketUrl": "",
+    "thumbnail": "",
+    "status": "past"
+  },
+  {
+    "id": 5,
+    "date": "2024-12-03",
+    "venue": "TBA",
+    "city": "Denver",
+    "state": "CO",
+    "ticketUrl": "",
+    "thumbnail": "",
+    "status": "past"
+  }
+]
