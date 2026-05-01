@@ -11,6 +11,16 @@
   },
   {
     "id": 2,
+    "date": "2026-05-21",
+    "venue": "Summit Music Hall",
+    "city": "Columbus",
+    "state": "OH",
+    "ticketUrl": "https://www.eventbrite.com/e/recharge-dewpoint-crystalline-ep-release-party-tickets-1988639921538?aff=ebdssbdestsearch",
+    "thumbnail": "shows/releasepartyflyer.png",
+    "status": "upcoming"
+  },
+  {
+    "id": 3,
     "date": "2026-09-05",
     "venue": "The Cardinal Center",
     "city": "Secret Dreams Music Festival",
@@ -20,7 +30,7 @@
     "status": "upcoming"
   },
   {
-    "id": 3,
+    "id": 4,
     "date": "2025-04-11",
     "venue": "The Black Box",
     "city": "Denver",
@@ -30,7 +40,7 @@
     "status": "past"
   },
   {
-    "id": 4,
+    "id": 5,
     "date": "2024-12-07",
     "venue": "TBA",
     "city": "Denver",
@@ -40,7 +50,7 @@
     "status": "past"
   },
   {
-    "id": 5,
+    "id": 6,
     "date": "2024-12-03",
     "venue": "TBA",
     "city": "Denver",
