@@ -42,5 +42,16 @@
       "submithub": "https://www.submithub.com/links/2026-audiovisual-set"
     },
     "featured": false
+  },
+  {
+    "id": 5,
+    "title": "Don't Save Me",
+    "year": 2026,
+    "type": "Single",
+    "coverArt": "covers/dont-save-me.png",
+    "links": {
+      "submithub": "https://submithub.com/link/dont-save-me"
+    },
+    "featured": false
   }
 ]

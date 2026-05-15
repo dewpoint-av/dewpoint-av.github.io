@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "date": "2026-05-08",
-    "venue": "Galaxie Louisville",
-    "city": "Louisville",
-    "state": "KY",
-    "ticketUrl": "https://theticketing.co/e/subdoctaglxlou",
-    "thumbnail": "shows/subdocta-galaxie.jpg",
-    "status": "upcoming"
-  },
-  {
     "id": 2,
     "date": "2026-05-21",
     "venue": "Summit Music Hall",
