@@ -11,6 +11,17 @@
     "featured": true
   },
   {
+    "id": 5,
+    "title": "Crystalline",
+    "year": 2026,
+    "type": "EP",
+    "coverArt": "covers/crystallinecoverart.png",
+    "links": {
+      "submithub": "https://submithub.com/link/crystalline-ep"
+    },
+    "featured": false
+  },
+  {
     "id": 2,
     "title": "Recent Releases",
     "year": 2026,
@@ -40,17 +51,6 @@
     "coverArt": "covers/nye-set.jpg",
     "links": {
       "submithub": "https://www.submithub.com/links/2026-audiovisual-set"
-    },
-    "featured": false
-  },
-  {
-    "id": 5,
-    "title": "Don't Save Me",
-    "year": 2026,
-    "type": "Single",
-    "coverArt": "covers/dont-save-me.png",
-    "links": {
-      "submithub": "https://submithub.com/link/dont-save-me"
     },
     "featured": false
   }
