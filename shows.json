@@ -10,6 +10,16 @@
     "status": "upcoming"
   },
   {
+    "id": 8,
+    "date": "2026-07-16",
+    "venue": "The Black Box",
+    "city": "Denver",
+    "state": "CO",
+    "ticketUrl": "https://blackboxdenver.co/events/dewpoint-july16/tickets",
+    "thumbnail": "shows/blackbox-july16.jpg",
+    "status": "upcoming"
+  },
+  {
     "id": 3,
     "date": "2026-09-05",
     "venue": "The Cardinal Center",
