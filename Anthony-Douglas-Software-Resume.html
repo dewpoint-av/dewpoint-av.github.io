@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Anthony Douglas — Software Developer Résumé</title>
+<style>
+  @page { size: Letter; margin: 0.4in 0.5in; }
+
+  :root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --line: #d9d9d9;
+    --accent: #1a1a1a;      /* black accent (toned down from red) */
+    --accent-soft: #eeeeee;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.8pt;
+    line-height: 1.32;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: var(--accent); text-decoration: none; }
+
+  /* ---------- Header ---------- */
+  header { margin-bottom: 10px; }
+  .name {
+    font-size: 21pt;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  .name .dot { color: var(--accent); }
+  .title {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+  .contact {
+    margin-top: 6px;
+    font-size: 9.4pt;
+    color: var(--muted);
+  }
+  .contact span { white-space: nowrap; }
+  .contact .sep { color: var(--line); margin: 0 7px; }
+  .rule { height: 2px; background: var(--accent); margin: 6px 0 8px; border-radius: 2px; }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 7px; }
+  h2 {
+    font-size: 9.6pt;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+    margin: 0 0 4px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--line);
+  }
+  p { margin: 0; }
+  .summary { color: #2a2a2a; }
+
+  /* ---------- Skills ---------- */
+  .skill-row { display: flex; margin-bottom: 2px; }
+  .skill-label {
+    flex: 0 0 118px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .skill-vals { color: #333; }
+
+  /* ---------- Projects / Experience ---------- */
+  .entry { margin-bottom: 5.5px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .entry-title { font-weight: 700; font-size: 10.6pt; }
+  .entry-stack { font-style: italic; color: var(--muted); font-weight: 400; font-size: 9.6pt; }
+  .entry-meta { font-size: 9.2pt; color: var(--muted); white-space: nowrap; }
+  .entry-desc { margin-top: 2px; color: #2c2c2c; }
+  .entry-links { margin-top: 2px; font-size: 9.2pt; }
+  .entry-links a { font-weight: 600; }
+  .entry-links .sep { color: var(--line); margin: 0 7px; }
+
+  .two-col { display: flex; gap: 26px; }
+  .two-col > div { flex: 1; }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="name">Anthony Douglas<span class="dot">.</span></div>
+    <div class="title">Creative Software Developer &mdash; Real-Time Graphics &amp; Audio</div>
+    <div class="contact">
+      <span>anthony@dewpoint.live</span><span class="sep">|</span>
+      <span><a href="https://github.com/dewpoint-av">github.com/dewpoint-av</a></span><span class="sep">|</span>
+      <span><a href="https://dewpoint.live/#/dev">dewpoint.live/#/dev</a></span><span class="sep">|</span>
+      <span>Columbus, OH</span>
+    </div>
+    <div class="rule"></div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p class="summary">
+      I&rsquo;m a software developer focused on real-time graphics and audio. I write the GPU code behind the tools I
+      create with &mdash; C++/CUDA and GLSL fluid solvers and shaders for TouchDesigner, a path tracer, and JamCanvas,
+      a cross-platform audiovisual app with its own custom audio engine.
+    </p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skill-row"><div class="skill-label">Languages</div><div class="skill-vals">C++17, GLSL, CUDA, TypeScript / JavaScript, Kotlin, Swift, Python</div></div>
+    <div class="skill-row"><div class="skill-label">Graphics &amp; GPU</div><div class="skill-vals">OpenGL / GL ES, GLSL compute &amp; fragment shaders, CUDA kernels, OptiX ray tracing, raymarching &amp; SDFs, shader graphs, bloom / god-rays / post-processing</div></div>
+    <div class="skill-row"><div class="skill-label">Audio DSP</div><div class="skill-vals">Real-time synthesis, wavetable &amp; modular synths, FFT / spectral analysis, lock-free audio threads, sequencers &amp; samplers, JUCE (VST3 / CLAP)</div></div>
+    <div class="skill-row"><div class="skill-label">Platforms &amp; Tools</div><div class="skill-vals">TouchDesigner Custom Operators (C++/CUDA POPs &amp; TOPs), React, CMake, Android NDK / Oboe, iOS Core Audio, Git, Vercel</div></div>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">JamCanvas</span> &nbsp;<span class="entry-stack">C++ &middot; GLSL &middot; Kotlin &middot; Swift</span></span>
+        <span class="entry-meta">Cross-platform AV app</span>
+      </div>
+      <div class="entry-desc">
+        Audiovisual jam app built on a shared C++ core with a custom lock-free audio engine (sequencer, samplers,
+        wavetable &amp; modular synths, FFT analyzer) and a GLSL render pipeline (raymarching, node-based shader graph,
+        post-FX). Ships on SDL2/ImGui desktop, Android (NDK/Oboe), and iOS (Core Audio), with MIDI/OSC and NDI/Spout/Syphon output.
+      </div>
+      <div class="entry-links">
+        <a href="https://jamcanvas-av.vercel.app">jamcanvas-av.vercel.app</a><span class="sep">|</span>
+        <a href="https://github.com/dewpoint-av/JamCanvas">github.com/dewpoint-av/JamCanvas</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">FluidSPH</span> &nbsp;<span class="entry-stack">GLSL &middot; C++</span></span>
+        <span class="entry-meta">Real-time fluid solver</span>
+      </div>
+      <div class="entry-desc">
+        GPU smoothed-particle-hydrodynamics fluid solver for TouchDesigner, with neighbor spatial hashing, running
+        entirely in TouchDesigner&rsquo;s managed GPU context via GLSL compute &mdash; gives input geometry real fluid dynamics.
+      </div>
+      <div class="entry-links"><a href="https://github.com/dewpoint-av/FluidSPH">github.com/dewpoint-av/FluidSPH</a></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span><span class="entry-title">AffectorPOP</span> &nbsp;<span class="entry-stack">C++ &middot; CUDA</span></span>
+        <span class="entry-meta">TouchDesigner plugin</span>
+      </div>
+      <div class="entry-desc">
+        Native TouchDesigner custom operator (POP) that applies GPU particle forces &mdash; turbulence, vortex, attractor,
+        drag &mdash; via the TouchDesigner C++ SDK and CUDA kernels. Part of a sellable suite of GPU operators.
+      </div>
+      <div class="entry-links"><a href="https://github.com/dewpoint-av/AffectorPOP">github.com/dewpoint-av/AffectorPOP</a></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Independent Software Developer &mdash; Dewpoint AV</span>
+        <span class="entry-meta">2024 &ndash; Present</span>
+      </div>
+      <div class="entry-desc">
+        Design, build, and sell GPU graphics and audio software: a suite of TouchDesigner custom operators
+        (C++/CUDA/GLSL), an OptiX path tracer, and JamCanvas. Own the full stack from low-level GPU engines to
+        React/TypeScript web and Patreon-based licensing.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Audio / Video Engineer (A2 &middot; V1) &mdash; Freelance</span>
+        <span class="entry-meta">2023 &ndash; Present</span>
+      </div>
+      <div class="entry-desc">
+        Real-time AV systems, live visuals, and projection mapping for club- and festival-scale productions &mdash;
+        a hands-on background in low-latency, real-time technical systems.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry-head">
+      <span><span class="entry-title">University of Tennessee</span> &nbsp;<span class="entry-stack">Music Education</span></span>
+      <span class="entry-meta">3 years</span>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+# https://dewpoint.live — Dewpoint (Anthony Douglas), audiovisual artist / musician / TouchDesigner
+User-agent: *
+Allow: /
+
+Sitemap: https://dewpoint.live/sitemap.xml

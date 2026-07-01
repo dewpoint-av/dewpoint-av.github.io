@@ -1,42 +1,77 @@
 [
   {
-    "id": 7,
+    "id": 108513581,
     "date": "2026-07-10",
-    "venue": "Riverside Sessions",
-    "city": "Mt. Vernon",
+    "venue": "Riverside Sessions 2026",
+    "city": "Livingston",
     "state": "KY",
     "ticketUrl": "https://tixfox.co/e/mZJk28Ouxr",
-    "thumbnail": "shows/rockcastle.webp",
-    "status": "upcoming"
+    "status": "upcoming",
+    "thumbnail": "shows/rockcastle.webp"
   },
   {
-    "id": 8,
+    "id": 108513595,
     "date": "2026-07-16",
     "venue": "The Black Box",
     "city": "Denver",
     "state": "CO",
     "ticketUrl": "https://blackboxdenver.co/events/dewpoint-july16/tickets",
-    "thumbnail": "shows/blackbox-july16.jpg",
-    "status": "upcoming"
+    "status": "upcoming",
+    "thumbnail": "shows/blackbox-july16.jpg"
   },
   {
-    "id": 3,
-    "date": "2026-09-05",
-    "venue": "The Cardinal Center",
-    "city": "Secret Dreams Music Festival",
-    "state": "",
+    "id": 108513586,
+    "date": "2026-09-03",
+    "venue": "Secret Dreams Music & Arts Festival 2026",
+    "city": "Marengo",
+    "state": "OH",
     "ticketUrl": "https://secretdreamsfest.ticketspice.com/secret-dreams-festival-2026",
-    "thumbnail": "shows/secret-dreams.png",
-    "status": "upcoming"
+    "status": "upcoming",
+    "thumbnail": "shows/secret-dreams.png"
   },
   {
-    "id": 4,
+    "id": 38889669,
+    "date": "2026-05-21",
+    "venue": "The Summit Music Hall",
+    "city": "Columbus",
+    "state": "OH",
+    "ticketUrl": "https://www.bandsintown.com/e/1038889669",
+    "status": "past"
+  },
+  {
+    "id": 37771413,
+    "date": "2026-05-08",
+    "venue": "Galaxie Louisville",
+    "city": "Louisville",
+    "state": "KY",
+    "ticketUrl": "https://www.bandsintown.com/e/1037771413",
+    "status": "past"
+  },
+  {
+    "id": 107410262,
+    "date": "2025-10-25",
+    "venue": "Read the Room",
+    "city": "Orlando",
+    "state": "FL",
+    "ticketUrl": "https://www.bandsintown.com/e/107410262",
+    "status": "past"
+  },
+  {
+    "id": 107410259,
+    "date": "2025-10-11",
+    "venue": "Redtree Jamboree",
+    "city": "Columbus",
+    "state": "OH",
+    "ticketUrl": "https://www.bandsintown.com/e/107410259",
+    "status": "past"
+  },
+  {
+    "id": 106638993,
     "date": "2025-04-11",
-    "venue": "The Black Box",
+    "venue": "Soundz Organic Presents: Kuhlin, Dewpoint, Dendroid and more",
     "city": "Denver",
     "state": "CO",
-    "ticketUrl": "",
-    "thumbnail": "",
+    "ticketUrl": "https://www.bandsintown.com/e/106638993",
     "status": "past"
   },
   {

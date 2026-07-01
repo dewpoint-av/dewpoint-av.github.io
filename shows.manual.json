@@ -1,0 +1,52 @@
+[
+  {
+    "id": 7,
+    "date": "2026-07-10",
+    "venue": "Riverside Sessions",
+    "city": "Mt. Vernon",
+    "state": "KY",
+    "ticketUrl": "https://tixfox.co/e/mZJk28Ouxr",
+    "thumbnail": "shows/rockcastle.webp",
+    "status": "upcoming"
+  },
+  {
+    "id": 8,
+    "date": "2026-07-16",
+    "venue": "The Black Box",
+    "city": "Denver",
+    "state": "CO",
+    "ticketUrl": "https://blackboxdenver.co/events/dewpoint-july16/tickets",
+    "thumbnail": "shows/blackbox-july16.jpg",
+    "status": "upcoming"
+  },
+  {
+    "id": 3,
+    "date": "2026-09-05",
+    "venue": "The Cardinal Center",
+    "city": "Marengo",
+    "state": "OH",
+    "ticketUrl": "https://secretdreamsfest.ticketspice.com/secret-dreams-festival-2026",
+    "thumbnail": "shows/secret-dreams.png",
+    "status": "upcoming"
+  },
+  {
+    "id": 5,
+    "date": "2024-12-07",
+    "venue": "TBA",
+    "city": "Denver",
+    "state": "CO",
+    "ticketUrl": "",
+    "thumbnail": "",
+    "status": "past"
+  },
+  {
+    "id": 6,
+    "date": "2024-12-03",
+    "venue": "TBA",
+    "city": "Denver",
+    "state": "CO",
+    "ticketUrl": "",
+    "thumbnail": "",
+    "status": "past"
+  }
+]
