@@ -1,5 +1,16 @@
 [
   {
+    "id": 6,
+    "title": "Nebula Plane",
+    "year": 2026,
+    "type": "EP",
+    "coverArt": "2026nebulaplane.png",
+    "links": {
+      "submithub": "https://ffm.to/nebula-plane"
+    },
+    "featured": true
+  },
+  {
     "id": 1,
     "title": "Flux State",
     "year": 2026,
@@ -7,17 +18,6 @@
     "coverArt": "covers/flux-state.jpg",
     "links": {
       "submithub": "https://www.submithub.com/link/flux-state"
-    },
-    "featured": true
-  },
-  {
-    "id": 5,
-    "title": "Crystalline",
-    "year": 2026,
-    "type": "EP",
-    "coverArt": "covers/crystallinecoverart.png",
-    "links": {
-      "submithub": "https://submithub.com/link/crystalline-ep"
     },
     "featured": false
   },
@@ -29,17 +29,6 @@
     "coverArt": "covers/recent-releases.jpg",
     "links": {
       "soundcloud": "https://soundcloud.com/dewpointlive/sets/recent-releases"
-    },
-    "featured": false
-  },
-  {
-    "id": 3,
-    "title": "Pressure Front",
-    "year": 2026,
-    "type": "Mixtape",
-    "coverArt": "covers/pressure-front.jpg",
-    "links": {
-      "soundcloud": "https://soundcloud.com/dewpointlive/pressure-front"
     },
     "featured": false
   },

@@ -1,5 +1,17 @@
 [
   {
+    "id": 9,
+    "date": "2026-08-01",
+    "venue": "The Oracle",
+    "city": "Columbus",
+    "state": "OH",
+    "ticketUrl": "https://www.yelp.com/biz/the-oracle-columbus-2",
+    "ticketLabel": "Venue Info",
+    "note": "Free Show",
+    "thumbnail": "shows/oraclephoto.jpg",
+    "status": "upcoming"
+  },
+  {
     "id": 7,
     "date": "2026-07-10",
     "venue": "Riverside Sessions",
