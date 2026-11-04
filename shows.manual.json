@@ -12,6 +12,15 @@
     "status": "upcoming"
   },
   {
+    "id": 10,
+    "date": "2026-12-31",
+    "venue": "Otherworld",
+    "city": "Columbus",
+    "state": "OH",
+    "ticketUrl": "https://otherworld.ticketspice.com/nye-2026",
+    "status": "upcoming"
+  },
+  {
     "id": 7,
     "date": "2026-07-10",
     "venue": "Riverside Sessions",
